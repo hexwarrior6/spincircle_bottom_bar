@@ -48,8 +48,9 @@ class MyHomePage extends StatelessWidget {
               elevation: 2
             ),
             elevation: 2.0,
+            circleSize: 0.5, // Suggested 0 for small size, 0.5 for medium size and 1 for large size
             items: [
-              // Suggested count : 4
+              // Suggested count: 4
               SCBottomBarItem(icon: Icons.verified_user, title: "User", onPressed: () {}),
               SCBottomBarItem(icon: Icons.supervised_user_circle, title: "Details", onPressed: () {}),
               SCBottomBarItem(icon: Icons.notifications, title: "Notifications", onPressed: () {}),
@@ -72,4 +73,3 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
-

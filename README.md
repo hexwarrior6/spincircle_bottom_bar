@@ -8,9 +8,10 @@ An easy to implement Spin Circle Bottom Navigation Bar for Flutter Applications.
 * Customizable Tab Icon and Text for both Active and Inactive State
 * Customize colors for Spin Circle
 * Customize Bottom Bar and Spin Circle Item Count
+* Customize the size of the bottom circle
 
 ## Demo
-![](https://github.com/retroportalstudio/spincircle_bottom_bar/blob/master/spincircle_bottom_bar.gif)
+https://github.com/user-attachments/assets/3caba000-3ef6-43fa-8993-0865d81fd313
 
 ## Usage
 To Use, simply add SpinCircleBottomBarHolder to your Scaffold's body, as follows:
@@ -28,34 +29,36 @@ class MyHomePage extends StatelessWidget {
         //Adding SpinCircleBottomBarHolder to body of Scaffold
         body: SpinCircleBottomBarHolder(
           bottomNavigationBar: SCBottomBarDetails(
-              circleColors: [Colors.white, Colors.orange, Colors.redAccent],
-              iconTheme: IconThemeData(color: Colors.black45),
-              activeIconTheme: IconThemeData(color: Colors.orange),
-              backgroundColor: Colors.white,
-              titleStyle: TextStyle(color: Colors.black45,fontSize: 12),
-              activeTitleStyle: TextStyle(color: Colors.black,fontSize: 12,fontWeight: FontWeight.bold),
-              actionButtonDetails: SCActionButtonDetails(
-                  color: Colors.redAccent,
-                  icon: Icon(
-                    Icons.expand_less,
-                    color: Colors.white,
-                  ),
-                  elevation: 2),
-              elevation: 2.0,
-              items: [
-                // Suggested count : 4
-                SCBottomBarItem(icon: Icons.verified_user, title: "User", onPressed: () {}),
-                SCBottomBarItem(icon: Icons.supervised_user_circle, title: "Details", onPressed: () {}),
-                SCBottomBarItem(icon: Icons.notifications, title: "Notifications", onPressed: () {}),
-                SCBottomBarItem(icon: Icons.details, title: "New Data", onPressed: () {}),
-              ],
-              circleItems: [
-                //Suggested Count: 3
-                SCItem(icon: Icon(Icons.add), onPressed: () {}),
-                SCItem(icon: Icon(Icons.print), onPressed: () {}),
-                SCItem(icon: Icon(Icons.map), onPressed: () {}),
-              ],
-              bnbHeight: 80 // Suggested Height 80
+            circleColors: [Colors.white, Colors.orange, Colors.redAccent],
+            iconTheme: IconThemeData(color: Colors.black45),
+            activeIconTheme: IconThemeData(color: Colors.orange),
+            backgroundColor: Colors.white,
+            titleStyle: TextStyle(color: Colors.black45,fontSize: 12),
+            activeTitleStyle: TextStyle(color: Colors.black,fontSize: 12,fontWeight: FontWeight.bold),
+            actionButtonDetails: SCActionButtonDetails(
+              color: Colors.redAccent,
+              icon: Icon(
+                Icons.expand_less,
+                color: Colors.white,
+              ),
+              elevation: 2
+            ),
+            elevation: 2.0,
+            circleSize: 0.5, // Suggested 0 for small size, 0.5 for medium size and 1 for large size
+            items: [
+              // Suggested count: 4
+              SCBottomBarItem(icon: Icons.verified_user, title: "User", onPressed: () {}),
+              SCBottomBarItem(icon: Icons.supervised_user_circle, title: "Details", onPressed: () {}),
+              SCBottomBarItem(icon: Icons.notifications, title: "Notifications", onPressed: () {}),
+              SCBottomBarItem(icon: Icons.details, title: "New Data", onPressed: () {}),
+            ],
+            circleItems: [
+              //Suggested Count: 3
+              SCItem(icon: Icon(Icons.add), onPressed: () {}),
+              SCItem(icon: Icon(Icons.print), onPressed: () {}),
+              SCItem(icon: Icon(Icons.map), onPressed: () {}),
+            ],
+            bnbHeight: 80 // Suggested Height 80
           ),
           child: Container(
             color: Colors.orangeAccent.withAlpha(55),
@@ -66,11 +69,7 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
-
 ```
-
-## Roadmap
-Plans to add more customizations.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

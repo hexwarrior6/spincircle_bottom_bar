@@ -4,3 +4,6 @@
 * Customizable Tab Icon and Text for both Active and Inactive State
 * Customize colors for Spin Circle
 * Customize Bottom Bar and Spin Circle Item Count
+
+## [1.0.1] - June 08, 2020
+* Customizable the size of the bottom circle

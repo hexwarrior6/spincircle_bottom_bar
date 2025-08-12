@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class SCBottomBarDetails {
   Color? backgroundColor;
   double? elevation;
+  double? circleSize;
   List<Color>? circleColors;
   IconThemeData? activeIconTheme;
   IconThemeData? iconTheme;
@@ -25,7 +26,8 @@ class SCBottomBarDetails {
     this.titleStyle,
     this.circleColors,
     this.backgroundColor,
-    this.elevation
+    this.elevation, 
+    this.circleSize,
   });
 }
 

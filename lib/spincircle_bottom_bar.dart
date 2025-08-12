@@ -15,6 +15,8 @@ class SpinCircleBottomBarHolder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double circleSize = bottomNavigationBar.circleSize ?? 0;
+
     return Stack(
       fit: StackFit.expand,
       children: <Widget>[
@@ -27,7 +29,7 @@ class SpinCircleBottomBarHolder extends StatelessWidget {
           ],
         ),
         Positioned(
-          bottom: 0,
+          bottom: -40 * circleSize,
           left: 0,
           child: SpinCircleBottomBar(
             bottomNavigationBar: bottomNavigationBar,
@@ -79,6 +81,7 @@ class _SpinCircleBottomBarState extends State<SpinCircleBottomBar> {
     final width = MediaQuery.of(context).size.width;
 
     final double bottomBarHeight = expandableBottomBarDetails.bnbHeight ?? 80;
+    final double circleSize = expandableBottomBarDetails.circleSize ?? 0;
     final IconThemeData iconTheme = expandableBottomBarDetails.iconTheme ?? const IconThemeData(color: Colors.black45);
     final IconThemeData activeIconTheme = expandableBottomBarDetails.activeIconTheme ?? const IconThemeData(color: Colors.black);
     final TextStyle textStyle = expandableBottomBarDetails.titleStyle ?? const TextStyle(color: Colors.black45, fontWeight: FontWeight.normal, fontSize: 12);
@@ -88,7 +91,7 @@ class _SpinCircleBottomBarState extends State<SpinCircleBottomBar> {
     final bool shouldOpen = expansionStatus == ExpansionStatus.open;
 
     return Container(
-      height: bottomBarHeight * 2,
+      height: bottomBarHeight * (circleSize + 2),
       width: width,
       alignment: Alignment.center,
       child: Stack(
@@ -98,7 +101,7 @@ class _SpinCircleBottomBarState extends State<SpinCircleBottomBar> {
           if (expansionStatus != ExpansionStatus.idle) ...[
             SizedBox(
               width: width,
-              height: bottomBarHeight * 2,
+              height: bottomBarHeight * (circleSize + 2),
               child: Stack(
                 children: <Widget>[
                   TweenAnimationBuilder(
@@ -113,7 +116,7 @@ class _SpinCircleBottomBarState extends State<SpinCircleBottomBar> {
                       );
                     },
                     child: EmptyLayer(
-                      radius: bottomBarHeight * 2,
+                      radius: bottomBarHeight * (circleSize + 2),
                       color: expandableBottomBarDetails.circleColors![2],
                     ),
                   ),
@@ -129,7 +132,7 @@ class _SpinCircleBottomBarState extends State<SpinCircleBottomBar> {
                       );
                     },
                     child: EmptyLayer(
-                      radius: bottomBarHeight * 2,
+                      radius: bottomBarHeight * (circleSize + 2),
                       color: expandableBottomBarDetails.circleColors![1],
                     ),
                   ),
@@ -146,7 +149,7 @@ class _SpinCircleBottomBarState extends State<SpinCircleBottomBar> {
                     },
                     child: PrimaryCircle(
                       circleItems: expandableBottomBarDetails.circleItems,
-                      radius: bottomBarHeight * 2,
+                      radius: bottomBarHeight * (circleSize + 2),
                       color: expandableBottomBarDetails.circleColors![0],
                     ),
                   ),
@@ -155,7 +158,7 @@ class _SpinCircleBottomBarState extends State<SpinCircleBottomBar> {
             )
           ],
           Positioned(
-            bottom: 0,
+            bottom: 40 * circleSize,
             child: Container(
               height: bottomBarHeight,
               width: width,
@@ -211,7 +214,7 @@ class _SpinCircleBottomBarState extends State<SpinCircleBottomBar> {
             ),
           ),
           Container(
-            height: bottomBarHeight * 2,
+            height: bottomBarHeight * (circleSize + 2),
             width: MediaQuery.of(context).size.width,
             alignment: Alignment.center,
             child: TweenAnimationBuilder(
