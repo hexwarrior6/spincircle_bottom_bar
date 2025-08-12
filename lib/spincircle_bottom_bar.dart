@@ -232,6 +232,7 @@ class _SpinCircleBottomBarState extends State<SpinCircleBottomBar> {
               child: FloatingActionButton(
                 elevation: actionButtonDetails!.elevation,
                 backgroundColor: actionButtonDetails.color,
+                shape: CircleBorder(),
                 onPressed: () {
                   if (expansionStatus == ExpansionStatus.idle) {
                     setState(() {

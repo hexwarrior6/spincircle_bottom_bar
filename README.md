@@ -11,7 +11,7 @@ An easy to implement Spin Circle Bottom Navigation Bar for Flutter Applications.
 * Customize the size of the bottom circle
 
 ## Demo
-https://github.com/user-attachments/assets/3caba000-3ef6-43fa-8993-0865d81fd313
+![demo](demo.gif)
 
 ## Usage
 To Use, simply add SpinCircleBottomBarHolder to your Scaffold's body, as follows:
